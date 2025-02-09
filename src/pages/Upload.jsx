@@ -3,7 +3,7 @@ import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import "./UploadData.css";
 
-const UploadData = ({ setFileUploaded }) => {
+const UploadData = ({ setFileUploaded, setJsonData }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const backendURL = "https://predictivemain.onrender.com";
@@ -18,6 +18,7 @@ const UploadData = ({ setFileUploaded }) => {
       setError("");
 
       try {
+        // 🔼 Upload file to backend
         const uploadResponse = await axios.post(`${backendURL}/upload`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
@@ -26,9 +27,18 @@ const UploadData = ({ setFileUploaded }) => {
           throw new Error("Invalid upload response from server.");
         }
 
-        setFileUploaded(true); // ✅ Set upload flag
+        setFileUploaded(true); // ✅ File uploaded successfully
+
+        // 🔽 Fetch the JSON files after upload
+        const jsonResponse = await axios.get(`${backendURL}/load-data`);
+        
+        if (!jsonResponse.data) {
+          throw new Error("Invalid JSON response from server.");
+        }
+
+        setJsonData(jsonResponse.data); // ✅ Store JSON data in state
       } catch (err) {
-        console.error("Error uploading file:", err);
+        console.error("Error:", err);
         setError("File upload failed. Please try again.");
       } finally {
         setLoading(false);
@@ -57,6 +67,7 @@ const UploadData = ({ setFileUploaded }) => {
 };
 
 export default UploadData;
+
 
 
 
