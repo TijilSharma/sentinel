@@ -1,0 +1,210 @@
+/* Background and General Styles */
+body {
+  background: linear-gradient(135deg, #0d1117, #161b22, #22272e);
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Overview Page Background */
+.overview-background {
+  background: url("/public/Images/background.jpeg") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.accordion-button::after {
+  filter: invert(1); /* Makes the dropdown icon white */
+}
+.accordion-button:focus, 
+.accordion-button:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.accordion-item {
+  border: none !important;
+}
+/* Dark overlay for better text readability */
+.overview-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Adjust darkness */
+  z-index: 1;
+}
+
+.overview-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 5% 10%;
+}
+
+/* Accordion and Cards */
+.accordion-header {
+  background-color: #222222 !important;
+  color: white !important;
+}
+
+.accordion-button {
+  background-color: #333333 !important;
+  color: white !important;
+  font-size: 1.3rem !important;
+  font-weight: bold !important;
+  padding: 20px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #444444 !important;
+  color: #00aaff !important;
+  border: 2px solid #007bff !important;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5) !important;
+}
+
+.accordion-body {
+  background-color: #181818 !important;
+  color: white !important;
+  font-size: 1.1rem !important;
+  padding: 20px !important;
+  text-align: left !important; /* Ensures left alignment */
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.card {
+  background: linear-gradient(145deg, #232323, #1a1a1a);
+  border: none !important; /* Removes border */
+  color: white;
+  box-shadow: none !important; /* Removes shadow */
+}
+
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: bold;
+  box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #0056b3, #003f7f);
+  box-shadow: 0px 5px 20px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+}
+
+/* Team Card Base */
+.team-card {
+  background: #181818 !important; /* Dark base */
+  text-align: center !important;
+  border-radius: 10px !important;
+  padding: 18px !important;
+  color: white !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100%;
+  max-width: 450px !important;
+  transition: 
+    transform 0.3s ease-in-out, 
+    box-shadow 0.3s ease-in-out, 
+    background 0.3s ease-in-out;
+}
+
+/* Glowing Effect on Hover */
+.team-card:hover {
+  transform: translateY(-5px) scale(1.06) !important;
+  background: linear-gradient(135deg, #00aaff, #0080ff, #0055ff) !important; /* Full card glow */
+  box-shadow: 0px 0px 30px rgba(0, 174, 255, 0.9),
+              0px 0px 50px rgba(0, 140, 255, 0.7),
+              0px 0px 70px rgba(0, 100, 255, 0.5) !important;
+}
+
+/* Ensure Text is Always Visible */
+.team-card:hover .card-title,
+.team-card:hover .card-text {
+  color: white !important;
+}
+
+.about-team-page {
+  background-color: #121212;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+  transform: scale(1.02);
+}
+
+.team-photo {
+  width: 300px; /* Increased size */
+  height: 300px; /* Ensure it's still square */
+  border-radius: 15px; /* Slightly rounded corners */
+  object-fit: cover;
+  margin-right: 25px; /* Adjust spacing */
+}
+.team-info {
+  flex-grow: 1;
+  color: white !important;
+}
+
+.team-info h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffff !important;
+}
+
+.role {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: white !important;
+}
+
+.bio {
+  font-size: 1rem;
+  margin-top: 5px;
+  line-height: 1.4;
+  color: white !important;
+}
+
+.meet-the-team {
+  font-family: "Orbitron", sans-serif; /* Futuristic font */
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white; /* Matches the glowing effect */
+  text-shadow: 0px 0px 10px rgba(0, 174, 255, 0.8);
+}
+
+.header {
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(0, 174, 255, 0.8);
+}
+
+
+
+

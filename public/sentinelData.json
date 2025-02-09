@@ -1,0 +1,52 @@
+{
+    "generalQuestions": {
+      "What is Sentinel?": "Sentinel is an AI-powered predictive maintenance platform that helps monitor machine health, predict failures, and recommend maintenance actions.",
+      "What does Sentinel do?": "Sentinel predicts Remaining Useful Life (RUL) for machines, classifies them into High, Medium, and Low Risk, and suggests when maintenance is needed.",
+      "How do I use Sentinel?": "You can upload your machine’s log files, and Sentinel will analyze them to provide insights about machine health, failure risks, and maintenance recommendations."
+    },
+    "understandingOutputs": {
+      "Remaining Useful Life (RUL)": {
+        "What is RUL?": "Remaining Useful Life (RUL) is the estimated number of cycles before a machine may fail.",
+        "Where do I see the RUL of my machine?": "You can find your machine’s Predicted RUL on the dashboard, listed under each machine ID.",
+        "Why do different machines have different RUL values?": "Every machine experiences different usage patterns, loads, and wear over time, which affects its predicted RUL.",
+        "What should I do if my machine has a very low RUL?": "If your machine’s RUL is below 15 cycles, it is in the High Risk category, and immediate maintenance is recommended."
+      },
+      "Machine Risk Levels": {
+        "What does 'Low Risk' mean?": "Low Risk means your machine is in good condition and does not require immediate maintenance.",
+        "What does 'Medium Risk' mean?": "Medium Risk means your machine is approaching failure. Maintenance is recommended soon.",
+        "What does 'High Risk' mean?": "High Risk means your machine is close to failure. Immediate action is required.",
+        "Where do I see my machine’s risk level?": "Sentinel displays each machine’s risk level next to its Predicted RUL on the dashboard."
+      },
+      "Maintenance Recommendations": {
+        "How does Sentinel decide when maintenance is needed?": "Sentinel recommends maintenance based on your machine’s Predicted RUL and Risk Level.",
+        "When should I schedule maintenance?": {
+          "Low Risk": "Maintenance in 30 days",
+          "Medium Risk": "Maintenance in 5 days",
+          "High Risk": "Immediate action required"
+        },
+        "Where do I see the maintenance recommendations?": "The Next Maintenance Due column in Sentinel shows when maintenance is suggested for each machine."
+      },
+      "Failure Warnings & Alerts": {
+        "What does an 'Anomaly Detected' alert mean?": "It means Sentinel has detected unusual sensor data that could indicate a potential failure.",
+        "Should I be worried if an anomaly is detected?": "Not always, but it is a sign to inspect the machine for potential issues.",
+        "Where do I check for failure warnings?": "Sentinel displays failure warnings in red alerts on the dashboard."
+      }
+    },
+    "dataVisualization": {
+      "What do the graphs on Sentinel mean?": {
+        "RUL Distribution Graph": "Shows how long different machines are expected to last.",
+        "Risk Level Bar Chart": "Displays how many machines are in Low, Medium, and High Risk.",
+        "Failure Prediction Chart": "Shows the machines at risk of failure soon."
+      },
+      "How do I know if my machine is performing well?": "If your machine is in Low Risk and its RUL is high, it is performing well."
+    },
+    "advancedQueries": {
+      "Suggest some maintenance actions from the uploaded graph": "Your pump motor’s temperature has spiked by 15% over 24 hours. Would you like to schedule a maintenance check?",
+      "Explain RUL to me": "Remaining Useful Life (RUL) is the estimated time or number of operational cycles a piece of equipment has left before it fails or requires maintenance. It helps predict when a machine will stop functioning properly, allowing for proactive maintenance to prevent unexpected breakdowns and costly downtime. The Sentinel model uses LSTMs (Long Short-Term Memory) to analyze historical patterns in data and correlate them with current results (temperature, pressure, torque, etc.).",
+      "How do I upload log files?": "You can drag and drop your log files into the upload section. Supported formats include CSV, JSON, and TXT. The system will automatically process the data.",
+      "How does Sentinel classify failures?": "Sentinel categorizes failures into High Risk, Medium Risk, and Low Risk based on historical data, sensor readings, and AI analysis.",
+      "What should I do if my equipment is classified as High Risk?": "If Sentinel detects a High-Risk failure, it is recommended to schedule immediate maintenance to avoid unexpected breakdowns.",
+      "Can I see a graph of my equipment’s RUL trends?": "Yes! Sentinel provides time-series graphs showing how RUL changes over time and its expected lifespan."
+    }
+  }
+  
